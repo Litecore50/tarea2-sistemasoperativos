@@ -1,45 +1,34 @@
-BITS 16
+org 0x7C00
+%include "boot2.asm"
 
 start:
-    mov ax, 07C0h
-    add ax, 288
-    mov ss, ax
-    mov sp, 4096
-    
-    mov ax, 07C0h
-    mov ds, ax
+    jmp main
+    welcomeText: db "Bienvenido a TutorMec, presione las teclas!" , 0,
+    blockStructure: db "----  ----  ----  ----  ----", 10, 0x0D, 
+                     db "|  |  |  |  |  |  |  |  |  |", 10, 0x0D,
+                     db "----  ----  ----  ----  ----", 0
+    letras: db " 'f' (Dedo indice izq) | 'p' (Dedo menique der) |'x' (Dedo anular izq) | 'u' (Dedo corazon der)", 0,
+    mensaje_exitoso: db "Tecla CORRECTA!",0
+    mensaje_error: db "Tecla INCORRECTA!",0
+    buffer: times 10 db 0,0
 
-    mov si, helloText
-    call printStr   
-
-    jmp $
-
-    helloText db "Bienvenido a TutorMec!" , 10, 0X0D\
-    ,"Solo debes presionar las teclas a como van apareciendo!" ,10, 0X0D\
-    ,"                                                   |",10, 0X0D\
-    ,"   ----    ----    ----    ----    ----            |",10, 0X0D\
-    ,"   |  |    |  |    |  |    |  |    |  |            |",10, 0X0D\
-    ,"   |  |    |  |    |  |    |  |    |  |            |",10, 0X0D\
-    ,"   |  |    |  |    |  |    |  |    |  |            |",10, 0X0D\
-    ,"   ----    ----    ----    ----    ----            |",10, 0X0D\
-    ,"                                                   |",0
-
-
-printStr:
-    mov ah, 0Eh
-
-
-.repeat:
-    lodsb
-    cmp al, 0
-    je .done
-    int 10h
-    jmp .repeat
-    
-.done:
+correcto:
+    limpiar_pantalla
+    imprimir mensaje_exitoso
     ret
-    
-
-
+main:
+    ;Imprimir interfaz
+    imprimir welcomeText
+    salto_linea
+    imprimir blockStructure
+    salto_linea
+    imprimir letras
+    salto_linea
+    entrada buffer
+    xor bx, bx
+    limpiar_pantalla
+    imprimir mensaje_error
+    salto_linea
+    jmp main
 TIMES 510 - ($ - $$) db 0
 dw 0xAA55

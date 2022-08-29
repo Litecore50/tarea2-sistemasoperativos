@@ -1,0 +1,12 @@
+Compilar en .bin
+nasm -f bin -o boot.bin boot.asm
+
+Quemar el binario en llave
+sudo dd if=/path/to/boot.bin of=/path/to/sdb bs=1M
+
+Ejecutar el binario desde el usb
+sudo qemu-system-x86_64 -hda /dev/sdb
+
+Ejecutar el binario desde disco
+sudo qemu-system-x86_64 boot.bin
+
