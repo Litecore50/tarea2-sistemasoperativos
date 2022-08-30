@@ -1,12 +1,12 @@
 Compilar en .bin
-nasm -f bin -o boot.bin boot.asm
+nasm -f bin -o tutormec.bin tutormec.asm
 
 Quemar el binario en llave
-sudo dd if=/path/to/boot.bin of=/path/to/sdb bs=1M
+sudo dd if=tutormec.bin of=/dev/sdc bs=1M
 
 Ejecutar el binario desde el usb
-sudo qemu-system-x86_64 -hda /dev/sdb
+sudo qemu-system-x86_64 -hda /dev/sdc
 
 Ejecutar el binario desde disco
-sudo qemu-system-x86_64 boot.bin
+sudo qemu-system-x86_64 tutormec.bin
 

@@ -1,4 +1,4 @@
-;Imprime algun mensaje en pantalla
+;Imprime mensaje en pantalla pedido por el programa
 %macro imprimir 1
     mov si, %1            
     mov ah, 0x0E          
@@ -19,21 +19,25 @@
 
 ;Compara los caracteres de entrada con los posibles correctos
 %macro comparador 1
+    ;Compara el caracter con la letra 'f'
     mov cl, 'f'
     cmp [bx], cl
     JE correcto
+    ;Compara el caracter con la letra 'u'
     mov cl, 'u'
     cmp [bx], cl
     JE correcto
+    ;Compara el caracter con la letra 'p'
     mov cl, 'p'
     cmp [bx], cl
     JE correcto
+    ;Compara el caracter con la letra 'x'
     mov cl, 'x'
     cmp [bx], cl
     JE correcto
 %endmacro
 
-;Recibe el input del usuario y lo guarda en una variable
+;Recibe el input del usuario y lo guarda en una variable, llama a comparar e imprime la tecla en pantalla
 %macro entrada 1
     %%read_string: 
         mov bx, %1
@@ -41,8 +45,9 @@
         cmp cx,10
         jz %%end_read
         caracter_de_entrada bx 
+        imprimir bx 
+        ;Llama al comparador para verificar si la tecla es correcta
         comparador bx
-        imprimir bx
         inc bx
         inc cx
     %%end_read:
@@ -57,9 +62,9 @@
     int 10h
 %endmacro
 
-;Muchos saltos de linea
+;Muchos saltos de linea para limpiar la pantalla
 %macro limpiar_pantalla 0
-    mov cx, 40
+    mov cx, 36
     %%loop_clear:
         cmp cx, 20
         jz %%end_loop
