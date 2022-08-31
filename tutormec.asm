@@ -1,4 +1,3 @@
-BITS 16
 %include "tutormec_lib.asm"
 start:
     ;Hace todos los cambios de direcciones de los registros
@@ -10,39 +9,27 @@ start:
     mov ax, 07C0h
     mov ds, ax
 
+    mov si, welcomeText
     ;Llama al main
     call main    ; main
     jmp $
-    welcomeText: db "Bienvenido a TutorMec, presione las teclas!" , 0,
-    blockStructure: db "Teclas:  f    p   x   u ", 10, 0x0D,
-                    db "---- ---- ---- ---- ----", 10, 0x0D, 
-                    db "|  | |  | |  | |  | |  |", 10, 0x0D,
-                    db "---- ---- ---- ---- ----", 10, 0x0D,
-                    db "'f' (Dedo indice izq) | 'p' (Dedo menique der) |'x' (Dedo anular izq) | 'u' (Dedo corazon der)", 10, 0x0D,
-                    db "Tecla presionada: '", 0
+    welcomeText db  "Bienvenido a TutorMec!", 10, 0x0D, \
+     		        "  f p  h x y  u", 10, 0x0D, \
+                    "----|----|----|---- ----", 10, 0x0D, \
+                    "|  |||  |||  |||  | |  |", 10, 0x0D, \
+                    "----V----V----V---- ----", 10, 0x0D, \
+                    "'p'(Menique der)", 10, 0x0D, \
+                    "'x'(Anular izq)", 10, 0x0D, \
+                    "'u'(Corazon der)", 10, 0x0D, \
+                    "Tecla presionada: '", 0
     mensaje_exitoso: db "', tecla CORRECTA!",0
-    mensaje_error: db "', tecla INCORRECTA!",0
+    mensaje_error: db "', tecla INCORRECTA o impacta con un bloque!",0
+    
     buffer: times 10 db 0,0
 
-main:
-    limpiar_pantalla
-    ;Imprimir interfaz
-    imprimir welcomeText
-    salto_linea
-    ;Imprimir estructura de bloques
-    imprimir blockStructure
-    ;Espera la entrada del usuario
-    entrada buffer
-    xor bx, bx
-    ;Imprime mensaje de error en caso de error
-    imprimir mensaje_error
-    ;Genera un loop hasta que el usuario presione la tecla correcta
-    jmp main
 
-;En caso de que la tecla sea correcta, se imprime el mensaje de exito y se finaliza el programa
-correcto:
-    imprimir mensaje_exitoso
-    ret
+printStr:
+    mov ah, 0Eh
 
 .repeat:
     lodsb
@@ -53,6 +40,25 @@ correcto:
     
 .done:
     ret
+    
+    
+main:
+    ;Imprimir interfaz
+    call printStr
+    ;Espera la entrada del usuario
+    entrada buffer
+    xor bx, bx
+    ;Imprime mensaje de error en caso de error
+    imprimir mensaje_error
+    limpiar_pantalla
+    ;Genera un loop hasta que el usuario presione la tecla correcta
+    jmp start
+    
+;En caso de que la tecla sea correcta, se imprime el mensaje de exito y se finaliza el programa
+correcto:
+    imprimir mensaje_exitoso
+    ret
+
 
 times 510 - ($-$$) db 0
 dw 0xAA55

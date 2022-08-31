@@ -19,10 +19,6 @@
 
 ;Compara los caracteres de entrada con los posibles correctos
 %macro comparador 1
-    ;Compara el caracter con la letra 'f'
-    mov cl, 'f'
-    cmp [bx], cl
-    JE correcto
     ;Compara el caracter con la letra 'u'
     mov cl, 'u'
     cmp [bx], cl
@@ -64,7 +60,7 @@
 
 ;Muchos saltos de linea para limpiar la pantalla
 %macro limpiar_pantalla 0
-    mov cx, 36
+    mov cx, 35
     %%loop_clear:
         cmp cx, 20
         jz %%end_loop
