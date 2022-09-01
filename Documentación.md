@@ -54,7 +54,7 @@ limpiar_pantalla: Muchos saltos de linea repetidos para limpiar la pantalla
 |Fecha|Hora de Inicio|Hora de Finalización|Actividad realizada|
 |-----|----------|-------|-------|
 |26/08/2022|12:00 PM|3:00 PM|Investigación de booteo y quemado de usb|
-| 26/08/2022 | 5:00 PM        | 6:00 PM              | Creación del git y descargar add-ons de Visual Studio Code   |
+|26/08/2022|5:00 PM|6:00 PM|Creación del git y descargar add-ons de Visual Studio Code|
 |26/08/2022|6:00 PM|7:00 PM|Booteo efectivo, print de la interfaz básica. Adicionalmente investigación de inputs de usuario.Creación del git y descargar add-ons de Visual Studio Code|
 |26/08/2022|6:00 PM| 7:00 PM |Investigar sobre booteo y realización de este, print de la interfaz básica. Adicionalmente investigación de inputs de usuario.|
 |26/08/2022|7:00 PM|7:30 PM|Creación de la documentación.|
@@ -63,8 +63,10 @@ limpiar_pantalla: Muchos saltos de linea repetidos para limpiar la pantalla
 |27/08/2022|7:00 PM|10:00 PM|Integración de input y limpiar pantalla a través de macros|
 |29/08/2022|11:00 AM|12:00 PM|Modificación de la documentación|
 |29/08/2022|12:00 PM|6:00 PM|Implementación de comparar variables y juego completo, a falta de animaciones. Implementar booteo nuevamente|
-|30/08/2022|:00 M|:00 M|Pruebas de booteo en el LAIMI|
-### Horas totales: 20.5 horas
+|30/08/2022|12:00 PM|1:00 PM|Pruebas de booteo en el LAIMI|
+|30/08/2022|7:00 PM|1:00 AM|Re-hacer el boot, modificar la forma en que se imprime el texto|
+|31/08/2022|11:00 PM|11:30 PM|Modificacion de la documentacion|
+### Horas totales: 28 horas
 
 ## Autoevaluación:
 ### Estado del programa
@@ -83,7 +85,59 @@ Tuve un gran problema con las animaciones, no se lograron concretar en el progra
 
 ### Reporte de commits:
 
+commit ea43ae6d5df449b243a969e1dc92a6b828ec3374 (HEAD -> main, origin/main, origin/HEAD)
+Author: Pablo Munoz <pabloamh27@gmail.com>
+Date:   Tue Aug 30 22:46:18 2022 -0600
 
+    Version Funcional v1.2 booteable
+
+commit 7a7f73b4cbe17f5126a78f7588a534a0fea63e3d
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Mon Aug 29 18:07:55 2022 -0600
+
+    Documentacion y comparaciones v1.1
+
+commit 52dfbd14311e3f47a3717da8b905e7f79cb817e9
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Mon Aug 29 13:30:33 2022 -0600
+
+    Versión Funcional 1.0
+
+commit d49438b595eec8f5e603c2725736612956c5de53
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Fri Aug 26 18:50:45 2022 -0600
+
+    Documentación e interfaz básica
+
+commit 61efe9723a2ae99538481cd8bfd72643f7d3bb49
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Fri Aug 26 17:53:46 2022 -0600
+
+    Primeros pasos v0.1
+(END)
+commit 7a7f73b4cbe17f5126a78f7588a534a0fea63e3d
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Mon Aug 29 18:07:55 2022 -0600
+
+    Documentacion y comparaciones v1.1
+
+commit 52dfbd14311e3f47a3717da8b905e7f79cb817e9
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Mon Aug 29 13:30:33 2022 -0600
+
+    Versión Funcional 1.0
+
+commit d49438b595eec8f5e603c2725736612956c5de53
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Fri Aug 26 18:50:45 2022 -0600
+
+    Documentación e interfaz básica
+
+commit 61efe9723a2ae99538481cd8bfd72643f7d3bb49
+Author: Pablo Munoz Hidalgo <53487847+Litecore50@users.noreply.github.com>
+Date:   Fri Aug 26 17:53:46 2022 -0600
+
+    Primeros pasos v0.1
 
 ## Lecciones Aprendidas:
 
