@@ -25,7 +25,7 @@ Strings: Se usan para imprimir la interfaz en pantalla.
 
 Start: Inicia el programa y llama a main.
 
-main: Imprime toda la interfaz y llama a entrada, la cual espera una entrada del usuario.
+main: Llama a la función "tutormec".
 
 correcto: En caso de que la tecla sea correcta imprime un mensaje y termina el programa.
 
@@ -42,6 +42,8 @@ entrada: Recibe el input del usuario y lo guarda en una variable, llama a compar
 salto_linea: Salto de linea básico
 
 limpiar_pantalla: Muchos saltos de linea repetidos para limpiar la pantalla
+
+tutormec: Imprime toda la interfaz y llama a entrada, la cual espera una entrada del usuario. En caso de que entrada sea fallido imprime mensaje de error.
 
 ## Instrucciones para ejecutar el programa:
 
@@ -66,7 +68,10 @@ limpiar_pantalla: Muchos saltos de linea repetidos para limpiar la pantalla
 |30/08/2022|12:00 PM|1:00 PM|Pruebas de booteo en el LAIMI|
 |30/08/2022|7:00 PM|1:00 AM|Re-hacer el boot, modificar la forma en que se imprime el texto|
 |31/08/2022|11:00 PM|11:30 PM|Modificacion de la documentacion|
-### Horas totales: 28 horas
+|2/09/2022|8:00 AM|10:00 AM|Modificación de la documentación|
+|2/09/2022|3:00 PM|5:00 PM|Pruebas en el LAIMI|
+
+### Horas totales: 32 horas
 
 ## Autoevaluación:
 ### Estado del programa

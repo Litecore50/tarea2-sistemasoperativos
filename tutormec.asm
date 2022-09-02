@@ -43,22 +43,24 @@ printStr:
     
     
 main:
-    ;Imprimir interfaz
-    call printStr
-    ;Espera la entrada del usuario
-    entrada buffer
-    xor bx, bx
-    ;Imprime mensaje de error en caso de error
-    imprimir mensaje_error
-    limpiar_pantalla
-    ;Genera un loop hasta que el usuario presione la tecla correcta
-    jmp start
+    tutormec
     
 ;En caso de que la tecla sea correcta, se imprime el mensaje de exito y se finaliza el programa
 correcto:
     imprimir mensaje_exitoso
-    ret
+    call limpiar_pantalla
+    jmp start
 
+limpiar_pantalla:
+    mov cx, 35
+    loop_lineas:
+        cmp cx, 20
+        jz end_loop
+        dec cx
+        salto_linea
+        jmp loop_lineas
+    end_loop:
+        salto_linea
 
 times 510 - ($-$$) db 0
 dw 0xAA55

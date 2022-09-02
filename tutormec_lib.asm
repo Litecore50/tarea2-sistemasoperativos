@@ -10,6 +10,19 @@
     %%end:
 %endmacro
 
+%macro tutormec 0
+    ;Imprimir interfaz
+    call printStr
+    ;Espera la entrada del usuario
+    entrada buffer
+    xor bx, bx
+    ;Imprime mensaje de error en caso de error
+    imprimir mensaje_error
+    call limpiar_pantalla
+    ;Genera un loop hasta que el usuario presione la tecla correcta
+    jmp start
+%endmacro
+
 ;Guarda el caracter que ingreso el user, funciona junto a "entrada"
 %macro caracter_de_entrada 1
     mov ah, 0x0
@@ -56,17 +69,4 @@
     int 10h
     mov al, 0x0D
     int 10h
-%endmacro
-
-;Muchos saltos de linea para limpiar la pantalla
-%macro limpiar_pantalla 0
-    mov cx, 35
-    %%loop_clear:
-        cmp cx, 20
-        jz %%end_loop
-        dec cx
-        salto_linea
-        jmp %%loop_clear
-    %%end_loop:
-        salto_linea
 %endmacro
