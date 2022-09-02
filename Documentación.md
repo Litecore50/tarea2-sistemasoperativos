@@ -89,8 +89,19 @@ Tuve un gran problema con las animaciones, no se lograron concretar en el progra
 |30/30|40/50|20/20|
 
 ### Reporte de commits:
+commit bd67f83a0e27498e77dbc5d1fb7e2996b89142e5
+Author: Pablo Munoz <pabloamh27@gmail.com>
+Date:   Fri Sep 2 09:06:19 2022 -0600
 
-commit ea43ae6d5df449b243a969e1dc92a6b828ec3374 (HEAD -> main, origin/main, origin/HEAD)
+    Documentación e integracion de tar.gz v1.4
+
+commit f44d199d77c696ed7614a09c8ce1a4baa0548ffd
+Author: Pablo Munoz <pabloamh27@gmail.com>
+Date:   Wed Aug 31 23:10:58 2022 -0600
+
+    v1.3 docu actualizada
+
+commit ea43ae6d5df449b243a969e1dc92a6b828ec3374
 Author: Pablo Munoz <pabloamh27@gmail.com>
 Date:   Tue Aug 30 22:46:18 2022 -0600
 
@@ -170,4 +181,4 @@ En esta tarea aprendí muchísimo sobre NASM y lo poderoso que es, sin embargo e
 
 [9] 	*Which variable size to use (db, dw, dd) with x86 assembly?* (s. f.). Stack Overflow. https://stackoverflow.com/questions/10168743/which-variable-size-to-use-db-dw-dd-with-x86-assembly
 
-[9]	*How do i define macros in NASM x86*. (s. f.). Stack Overflow. https://stackoverflow.com/questions/65935606/how-do-i-define-macros-in-nasm-x86
+[10]	*How do i define macros in NASM x86*. (s. f.). Stack Overflow. https://stackoverflow.com/questions/65935606/how-do-i-define-macros-in-nasm-x86
